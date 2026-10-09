@@ -1,0 +1,16 @@
+{
+  "estimated_noise_rate": 0.5253,
+  "mixture_weights": [
+    0.4624,
+    0.5376
+  ],
+  "mixture_means": [
+    -0.438,
+    0.2376
+  ],
+  "mixture_stds": [
+    0.1899,
+    0.2659
+  ],
+  "fitted_on": "cv_margin"
+}

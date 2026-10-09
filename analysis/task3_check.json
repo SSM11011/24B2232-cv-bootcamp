@@ -1,0 +1,74 @@
+{
+  "true_noise_rate": 0.4024,
+  "estimated_noise_rate_no_clean_labels": 0.5253,
+  "signals": {
+    "cv_loss": {
+      "description": "cross-validated 1 - p(given label)",
+      "auroc": 0.9456,
+      "precision_at_k": 0.8394
+    },
+    "cv_margin": {
+      "description": "cross-validated margin",
+      "auroc": 0.953,
+      "precision_at_k": 0.8542
+    },
+    "aum": {
+      "description": "AUM (in-fold training dynamics)",
+      "auroc": 0.9602,
+      "precision_at_k": 0.8738
+    },
+    "score": {
+      "description": "submitted: rank average of cv_margin and AUM",
+      "auroc": 0.9627,
+      "precision_at_k": 0.8734
+    }
+  },
+  "failures_at_k": {
+    "k": 18109,
+    "missed_errors": 2292,
+    "missed_where_held_out_model_agrees_with_wrong_label": 0.7683,
+    "most_common_missed": [
+      [
+        "cat labeled dog",
+        414
+      ],
+      [
+        "truck labeled automobile",
+        286
+      ],
+      [
+        "deer labeled horse",
+        271
+      ],
+      [
+        "dog labeled cat",
+        205
+      ],
+      [
+        "airplane labeled ship",
+        107
+      ],
+      [
+        "cat labeled bird",
+        70
+      ],
+      [
+        "airplane labeled bird",
+        66
+      ],
+      [
+        "deer labeled dog",
+        62
+      ]
+    ],
+    "false_alarms": 2292,
+    "false_alarms_where_held_out_model_disagrees_with_correct_label": 0.9533
+  },
+  "at_task4_cutoff": {
+    "dropped": 23638,
+    "kept": 21362,
+    "noise_rate_of_kept_images": 0.0316,
+    "share_of_errors_removed": 0.9627,
+    "share_of_correct_labels_removed": 0.2307
+  }
+}

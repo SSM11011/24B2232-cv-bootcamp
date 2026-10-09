@@ -1,0 +1,16 @@
+{
+  "estimated_noise_rate": 0.3912,
+  "mixture_weights": [
+    0.6084,
+    0.3916
+  ],
+  "mixture_means": [
+    -1.4239,
+    1.7945
+  ],
+  "mixture_stds": [
+    0.6761,
+    0.6813
+  ],
+  "fitted_on": "negated AUM of the t5_ce run"
+}

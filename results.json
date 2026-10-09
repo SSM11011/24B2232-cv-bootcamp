@@ -1,0 +1,214 @@
+{
+  "name": "Shibam Sundar Mahakud",
+  "roll_no": "24B2232",
+  "seed": 0,
+  "training_setup": {
+    "optimizer": "SGD, momentum 0.9, weight decay 0.0005",
+    "learning_rate_schedule": "cosine from 0.1 to 0 over 60 epochs, updated every step",
+    "batch_size": 128,
+    "epochs": 60,
+    "augmentation": "random crop 32 with zero padding 4, random horizontal flip",
+    "gpu_used": "NVIDIA Thor"
+  },
+  "task1": {
+    "noise_rate": 0.4024,
+    "val_acc_noisy_labels__clean_ref_model": 0.5914,
+    "val_acc_noisy_labels__noisy_ce_model": 0.4916
+  },
+  "task2": {
+    "memorization_start_epoch": 37,
+    "early_stop_epoch": 36,
+    "val_acc_noisy_labels_at_early_stop": 0.549
+  },
+  "task3": {
+    "method": "rank average of 5-fold cross-validated margin (held-out softmax averaged over 60 epochs) and negated Area Under the Margin from the in-fold runs",
+    "estimated_noise_rate_no_clean_labels": 0.5253
+  },
+  "task4": {
+    "methods": [
+      {
+        "name": "gce",
+        "file": "t4_gce.csv",
+        "val_acc_noisy_labels": 0.5662,
+        "epoch": 53
+      },
+      {
+        "name": "coteaching",
+        "file": "t4_coteaching.csv",
+        "val_acc_noisy_labels": 0.5644,
+        "epoch": 59
+      },
+      {
+        "name": "cv_filter",
+        "file": "t4_cv_filter.csv",
+        "val_acc_noisy_labels": 0.5728,
+        "epoch": 58
+      }
+    ],
+    "best_method": "cv_filter"
+  },
+  "task5": {
+    "val_acc_synthetic_labels__baseline": 0.5012,
+    "val_acc_synthetic_labels__best_method": 0.5308,
+    "best_method": "cv_filter",
+    "runs": {
+      "t5_ce": {
+        "epoch": 40,
+        "val_acc_synthetic_labels": 0.5012
+      },
+      "t5_cv_filter": {
+        "epoch": 60,
+        "val_acc_synthetic_labels": 0.5308
+      },
+      "t5_gce": {
+        "epoch": 57,
+        "val_acc_synthetic_labels": 0.5286
+      }
+    }
+  },
+  "runs": {
+    "t1_clean_ref": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 45000,
+      "final_val_acc": 0.5914,
+      "best_val_acc": 0.5938,
+      "best_val_epoch": 51,
+      "minutes": 8.5
+    },
+    "t1_noisy_ce": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 45000,
+      "final_val_acc": 0.4916,
+      "best_val_acc": 0.549,
+      "best_val_epoch": 36,
+      "minutes": 11.2
+    },
+    "t3_fold0": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 36000,
+      "final_val_acc": 0.482,
+      "best_val_acc": 0.544,
+      "best_val_epoch": 44,
+      "minutes": 12.9
+    },
+    "t3_fold1": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 36000,
+      "final_val_acc": 0.4898,
+      "best_val_acc": 0.5426,
+      "best_val_epoch": 39,
+      "minutes": 16.0
+    },
+    "t3_fold2": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 36000,
+      "final_val_acc": 0.4894,
+      "best_val_acc": 0.5412,
+      "best_val_epoch": 39,
+      "minutes": 15.8
+    },
+    "t3_fold3": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 36000,
+      "final_val_acc": 0.4912,
+      "best_val_acc": 0.5532,
+      "best_val_epoch": 38,
+      "minutes": 16.0
+    },
+    "t3_fold4": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 36000,
+      "final_val_acc": 0.4786,
+      "best_val_acc": 0.5438,
+      "best_val_epoch": 34,
+      "minutes": 15.8
+    },
+    "t4_gce": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 45000,
+      "final_val_acc": 0.5662,
+      "best_val_acc": 0.5662,
+      "best_val_epoch": 53,
+      "minutes": 18.8
+    },
+    "t4_coteaching": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 2,
+      "num_train_images": 45000,
+      "final_val_acc": 0.5644,
+      "best_val_acc": 0.5644,
+      "best_val_epoch": 59,
+      "minutes": 16.3
+    },
+    "t4_cv_filter": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 21362,
+      "final_val_acc": 0.5714,
+      "best_val_acc": 0.5728,
+      "best_val_epoch": 58,
+      "minutes": 5.2
+    },
+    "t5_ce": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 45000,
+      "final_val_acc": 0.437,
+      "best_val_acc": 0.5012,
+      "best_val_epoch": 40,
+      "minutes": 8.3
+    },
+    "t5_cv_filter": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 27396,
+      "final_val_acc": 0.5308,
+      "best_val_acc": 0.5308,
+      "best_val_epoch": 60,
+      "minutes": 6.0
+    },
+    "t5_gce": {
+      "seed": 0,
+      "epochs": 60,
+      "status": "done",
+      "num_networks": 1,
+      "num_train_images": 45000,
+      "final_val_acc": 0.5248,
+      "best_val_acc": 0.5286,
+      "best_val_epoch": 57,
+      "minutes": 8.2
+    }
+  }
+}

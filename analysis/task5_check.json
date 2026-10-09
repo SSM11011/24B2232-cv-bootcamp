@@ -1,0 +1,22 @@
+{
+  "real": {
+    "run": "t1_noisy_ce",
+    "noise_rate": 0.4024,
+    "aum_auroc": 0.9593,
+    "aum_precision_at_k": 0.8702,
+    "peak_clean_val_epoch": 37,
+    "peak_clean_val_acc": 0.7838,
+    "final_clean_val_acc": 0.6754,
+    "final_memorization_rate": 0.6919
+  },
+  "synthetic": {
+    "run": "t5_ce",
+    "noise_rate": 0.401,
+    "aum_auroc": 0.9892,
+    "aum_precision_at_k": 0.9375,
+    "peak_clean_val_epoch": 40,
+    "peak_clean_val_acc": 0.8376,
+    "final_clean_val_acc": 0.709,
+    "final_memorization_rate": 0.4338
+  }
+}
